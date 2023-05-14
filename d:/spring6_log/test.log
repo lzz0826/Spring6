@@ -1,0 +1,5 @@
+11:07:59.410 DEBUG org.springframework.context.support.AbstractApplicationContext 630 prepareRefresh - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18317edc
+11:07:59.557 DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader 393 doLoadBeanDefinitions - Loaded 2 bean definitions from class path resource [bean-life.xml]
+11:07:59.583 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry 225 getSingleton - Creating shared instance of singleton bean 'myBeanPost'
+11:07:59.593 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry 225 getSingleton - Creating shared instance of singleton bean 'user'
+11:07:59.654 DEBUG org.springframework.context.support.AbstractApplicationContext 1029 doClose - Closing org.springframework.context.support.ClassPathXmlApplicationContext@18317edc, started on Sat Mar 11 11:07:59 CST 2023

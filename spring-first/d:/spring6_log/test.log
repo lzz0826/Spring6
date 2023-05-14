@@ -1,0 +1,4 @@
+03:04:02.986 DEBUG org.springframework.context.support.AbstractApplicationContext 630 prepareRefresh - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@47c4ecdc
+03:04:03.144 DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader 393 doLoadBeanDefinitions - Loaded 1 bean definitions from class path resource [bean.xml]
+03:04:03.166 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry 225 getSingleton - Creating shared instance of singleton bean 'User'
+03:04:03.206 INFO  com.tony.TestUser 35 testUser - 方法調用完成

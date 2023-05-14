@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans>
+
+<!--     set 方法注入  這裡會用到無參構造創建 -->
+        <bean id="Book" class="com.tony.di.Book">
+<!--     property 相當於一般生成的 set 方法       -->
+            <property name="bname" value="前端開發"></property>
+            <property name="author" value="tony"></property>
+
+            <!-- 賦予空值 -->
+<!--            <property name="other" >-->
+<!--                <null></null>-->
+<!--            </property>-->
+
+            <!--   < , > 符號跟XML衝突 使用轉義   &lt;&gt;  -->
+<!--            <property name="other" value="&lt;&gt;"></property>-->
+
+
+            <!-- 使用   <![CDATA[]]> 區讓XML分離出字串        -->
+            <property name="other">
+                <value><![CDATA[a < b]]></value>
+            </property>
+
+
+        </bean>
+
+
+<!--   構造器注入     -->
+        <bean id="BookCon" class="com.tony.di.Book">
+            <constructor-arg name="bname" value="java開發"></constructor-arg>
+            <constructor-arg name="author" value="tony"></constructor-arg>
+
+        </bean>
+
+        </beans>
+
+
+</beans>

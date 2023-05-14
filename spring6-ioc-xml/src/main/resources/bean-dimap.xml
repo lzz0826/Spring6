@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<!--
+   1 創建兩個對象
+   2 注入普通類
+   3 在學生bean注入map集合類型屬性
+   -->
+
+    <bean id="teacher01" class="com.tony.dimpa.Teacher">
+        <property name="teacherId" value="001"></property>
+        <property name="teacherName" value="Te"></property>
+    </bean>
+
+    <bean id="teacher02" class="com.tony.dimpa.Teacher">
+        <property name="teacherId" value="002"></property>
+        <property name="teacherName" value="tte"></property>
+    </bean>
+
+    <bean id="student" class="com.tony.dimpa.Student">
+        <property name="sId" value="200"></property>
+        <property name="sName" value="St"></property>
+       <!-- 在學生bean 注入map 集合屬性       -->
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>1001</value>
+                    </key>
+                    <ref bean="teacher01"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>1002</value>
+                    </key>
+                    <ref bean="teacher02"></ref>
+                </entry>
+
+            </map>
+        </property>
+    </bean>
+
+</beans>

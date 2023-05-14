@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--根據類型-->
+<!--    <bean id="userController" class="com.tony.auto.controller.UserController"-->
+<!--          autowire="byType">-->
+<!--    </bean>-->
+
+<!--    <bean id="userService" class="com.tony.auto.service.UserServiceImpl"-->
+<!--          autowire="byType">-->
+<!--    </bean>-->
+
+<!--    <bean id="userDao" class="com.tony.auto.dao.UserDaoImpl">-->
+<!--    </bean>-->
+
+
+<!--根據名聲 id必須跟定義的屬性名一樣-->
+    <bean id="userController" class="com.tony.auto.controller.UserController"
+          autowire="byName">
+    </bean>
+
+    <bean id="userService" class="com.tony.auto.service.UserServiceImpl"
+          autowire="byName">
+    </bean>
+
+    <bean id="userDao" class="com.tony.auto.dao.UserDaoImpl">
+    </bean>
+
+
+</beans>

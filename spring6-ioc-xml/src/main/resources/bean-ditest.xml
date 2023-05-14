@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+   <!--  引入外部bean 1.創建兩個類對象:dept 和 emp -->
+    <bean id="dept" class="com.tony.di.ditest.Dept">
+        <property name="dname" value="保全"></property>
+    </bean>
+
+    <bean id="emp" class="com.tony.di.ditest.Emp">
+
+        <!--  對象屬性注入  -->
+        <!--  這裡的  name 必須跟 類裡的屬性名一樣(private Dept dept;)
+            ref 必須剛上面得外部 bean id一樣      -->
+        <property name="dept" ref="dept"></property>
+
+        <!--       普通屬性注入     -->
+        <property name="ename" value="tony"></property>
+        <property name="age" value="20"></property>
+    </bean>
+
+
+
+   <!-- 使用內部bane注入   -->
+    <bean id="emp2" class="com.tony.di.ditest.Emp">
+        <!--       普通屬性注入     -->
+        <property name="ename" value="Don"></property>
+        <property name="age" value="50"></property>
+
+        <!--   內部bean 這裡的 name 必須跟 類裡的屬性名一樣(private Dept dept;)   -->
+        <property name="dept">
+            <bean id="dept2" class="com.tony.di.ditest.Dept">
+                <property name="dname" value="財務"></property>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 級聯附值       -->
+    <bean id="dept3" class="com.tony.di.ditest.Dept">
+        <property name="dname" value="客服部"></property>
+    </bean>
+
+    <bean id="emp3" class="com.tony.di.ditest.Emp">
+        <property name="ename" value="tom"></property>
+        <property name="age" value="18"></property>
+        <property name="dept" ref="dept3"></property>
+        <!--   這裡使用  dept.dname 調用類裡得 dname 覆蓋 -->
+        <property name="dept.dname" value="測試部"></property>
+    </bean>
+
+
+
+</beans>

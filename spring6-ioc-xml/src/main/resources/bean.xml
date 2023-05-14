@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--   獲取bean演示 user對象創建-->
+    <bean id="User" class="com.tony.User"></bean>
+
+<!--    同時指定兩個class="com.tony.User在使用類型創建時會報錯-->
+<!--    使用 id 或id和類就可以-->
+<!--    <bean id="User2" class="com.tony.User"></bean>-->
+
+<!--    一個接口實現類獲取過程-->
+<!--  interface 不能new 創建他的實現類  -->
+    <bean id="UserDaoImpl" class="com.tony.bean.UserDaoImpl"></bean>
+
+    <bean id="PersonDalImpl" class="com.tony.bean.PersonDalImpl"></bean>
+
+
+</beans>
